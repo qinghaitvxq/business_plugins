@@ -5,14 +5,15 @@ body{
 }
 .autofill_sel_cbx .checkInfo>div{
     position:relative;
-    border:solid 1px red;
+
+    margin-top: 10px;
 }
+
 .autofill_sel_cbx ul{
   list-style: none;
-    border:solid 1px blue;
     position:absolute;
-    left:30px;
-    top:2px;
+    left:63px;
+    top:-13px;
 
 }
 /*!*.autofill_sel_cbx ul:after{*!*/
@@ -20,27 +21,26 @@ body{
     /*!*display:block;*!*/
     /*!*clear:both;*!*/
 /*!*}*!*/
-/*.autofill_sel_cbx ul li{*/
-    /*float:left;*/
-    /*padding-right:10px;*/
-/*}*/
+.autofill_sel_cbx ul li{
+    float:left;
+    padding-right:10px;
+}
 
 /*.autofill_sel_cbx .checkInfo>div:after{*/
     /*content:'';*/
     /*display:block;*/
     /*clear:both;*/
 /*}*/
-/*.autofill_sel_cbx .checkInfo>div>span{*/
-    /*position:absolute;*/
-    /*left:0;*/
-/*}*/
+.autofill_sel_cbx .checkInfo>div>span{
+   line-height: 25px;
+}
 /*.selectInfo .selectInfo{*/
     /*padding:5px;*/
 /*}*/
-/*.autofill_sel_cbx .select_ctl{*/
-    /*width:180px;*/
-    /*height: 24px;*/
-/*}*/
+.autofill_sel_cbx .select_ctl{
+    width:180px;
+    height: 28px;
+}
 
 /*.autofill_sel_cbx .checkInfo{*/
 
