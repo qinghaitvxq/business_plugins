@@ -2,11 +2,16 @@
  * Created by caipf on 2017/7/13.
  */
 require("./css/style.css");
-
-require('jquery');
-console.log($);
+var $=jQuery=require('jquery');
 let bsPlugins=require('./src/index');
-console.log('this is app.js');
+
+//init select
+
+
+$("#roomType_sel").auto_sel_cbx({
+    "ctlDataGetUrl":"/data/auto_sel_cbx.json"
+});
+
 // let ctlconfigdata=[
 //     {
 //         "roomTp":"1",

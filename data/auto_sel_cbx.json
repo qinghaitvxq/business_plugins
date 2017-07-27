@@ -1,0 +1,25 @@
+{
+  "roomType":[
+    {"id":"1","name":"豪华房"},
+    {"id":"2","name":"大床房"},
+    {"id":"3","name":"单人间"},
+    {"id":"4","name":"双人间"},
+    {"id":"5","name":"三人间"},
+    {"id":"6","name":"测试"}
+  ],
+  "facility":[
+    {"id":"1","fName":"bedWidth","fDes":"床宽","value":[1.5,1.8,2]},
+    {"id":"2","fName":"hasWin","fDes":"是否有窗","value":[0,1]},
+    {"id":"3","fName":"bedNum","fDes":"床数","value":[1,2,3]}
+  ],
+  "rfconfig":[
+    {"rId":"1","fId":"1","fValue":"1.5"},
+    {"rId":"1","fId":"2","fValue":"0"},
+    {"rId":"1","fId":"3","fValue":"2"},
+
+    {"rId":"2","fId":"1","fValue":"2"},
+    {"rId":"2","fId":"2","fValue":"1"},
+    {"rId":"2","fId":"3","fValue":"1"}
+
+  ]
+}
