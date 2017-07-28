@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width:200px;
+            height:200px;
+        }
+        .wrapped{
+            position:relative;
+            width:960px;
+            margin:0 auto;
+        }
+        .aside{
+            position: absolute;
+            left:0;
+            top:0;
+            width:150px;
+            border:solid 1px red;
+            background-color: darkgray;
+            height:300px;
+        }
+        .main{
+            border:solid 1px green;
+            margin-left: 160px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrapped">
+    <div class="aside"></div>
+    <div class="main">
+        <div class="imglist">
+            <img src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/1.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/2.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/3.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/4.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/egvtj4ei0px.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/jjkrbf2mbww.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/44424nwcdoz.jpg" alt="">
+            <img src="http://i2.download.fd.pchome.net/t_960x600/g1/M00/08/11/oYYBAFORfLCIOoDEACc6825JK1QAABlOwBWg5wAJzsL745.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/t0r0nyqy350.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/zyuyc5easi2.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/allimg/tuku2/1044055000-0.jpg" alt="">
+            <img src="http://t1.mmonly.cc/uploads/allimg/tuku2/1044056113-1.jpg" alt="">
+
+        </div>
+    </div>
+</div>
+<script>
+
+
+
+//            var imglist=[
+//                "http://t1.mmonly.cc/uploads/tu/bj/tp/118/1.jpg",
+//                "http://t1.mmonly.ccx/uploads/tu/bj/tp/118/2.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/bj/tp/118/3.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/bj/tp/118/4.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/egvtj4ei0px.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/jjkrbf2mbww.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/44424nwcdoz.jpg",
+//                "http://i2.download.fd.pchome.net/t_960x600/g1/M00/08/11/oYYBAFORfLCIOoDEACc6825JK1QAABlOwBWg5wAJzsL745.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/t0r0nyqy350.jpg",
+//                "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/zyuyc5easi2.jpg",
+//                "http://t1.mmonly.cc/uploads/allimg/tuku2/1044055000-0.jpg",
+//                "http://t1.mmonly.cc/uploads/allimg/tuku2/1044056113-1.jpg"
+//            ];
+//            var imgCount=imglist.length;
+//            var lineCount=3;
+//
+//            var loadGroupImage=function (imglist) {
+//                var imgCount=imglist.length;
+//
+//               return new Promise(function (resolve,reject) {
+//                   imglist.forEach(function (item) {
+//                       var img=new Image();
+//                       img.src=item;
+//                       img.onload=function (e) {
+//                           console.log('success');
+//                           imgCount--;
+//                           document.querySelector(".imglist").appendChild(img);
+//                           if(imgCount==0){
+//                               resolve();
+//                           }
+//                       };
+//                       img.onerror=function (e) {
+//                           console.log('failed');
+//                           imgCount--;
+//                           if(imgCount==0){
+//                               resolve();
+//                           }
+//                       }
+//
+//                   });
+//               });
+//            };
+//
+//            function chunk() {
+//                setTimeout(function () {
+//                    var paralist=[];
+//                    for(var i=0;i<lineCount;i++){
+//                        var temp=imglist.shift();
+//                        if(temp){
+//                            paralist.push(temp);
+//                        }
+//                    }
+//                    loadGroupImage(paralist)
+//                        .then(function () {
+//                            if(paralist.length>0){
+//                                setTimeout(chunk,0);
+//                            }
+//                        });
+//                },0);
+//            }
+//
+//            chunk();
+
+
+
+
+//    document.addEventListener("DOMContentLoaded",function (e) {
+//        console.log('文档加载完成');
+//        var imglist=[
+//            "http://t1.mmonly.cc/uploads/tu/bj/tp/118/1.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/bj/tp/118/2.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/bj/tp/118/3.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/bj/tp/118/4.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/egvtj4ei0px.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/jjkrbf2mbww.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/44424nwcdoz.jpg",
+//            "http://i2.download.fd.pchome.net/t_960x600/g1/M00/08/11/oYYBAFORfLCIOoDEACc6825JK1QAABlOwBWg5wAJzsL745.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/t0r0nyqy350.jpg",
+//            "http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/zyuyc5easi2.jpg",
+//            "http://t1.mmonly.cc/uploads/allimg/tuku2/1044055000-0.jpg",
+//            "http://t1.mmonly.cc/uploads/allimg/tuku2/1044056113-1.jpg"
+//        ];
+//        var imgCount=imglist.length;
+//        var imageInstanceList=[];
+//
+//        imglist.forEach(function (item) {
+//            var img=new Image();
+//            img.src=item;
+//
+//            img.onload=function (e) {
+//                console.log('success');
+//                imgCount--;
+//                imageInstanceList.push(img);
+//
+//                if(imgCount==0){
+//                    console.log('图片加载完成');
+//                    imageInstanceList.forEach(function (item) {
+//                        document.querySelector(".imglist").appendChild(item);
+//                    });
+//
+//                }
+//            }
+//
+//            img.onerror=function (e) {
+//                console.log(e);
+//                imgCount--;
+//            }
+//        });
+//    });
+</script>
+</body>
+</html>

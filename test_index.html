@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>hello world</h1>
+<label for="" id="timeInfo">0</label>
+<a href="test.html">图片页</a>
+
+<script>
+    var imglist=[
+        "http://t1.mmonly.cc/uploads/tu/bj/tp/118/1.jpg",
+        "http://t1.mmonly.cc/uploads/tu/bj/tp/118/2.jpg",
+        "http://t1.mmonly.cc/uploads/tu/bj/tp/118/3.jpg"];
+    var loadGroupImage=function (imglist) {
+        var imgCount=imglist.length;
+
+        return new Promise(function (resolve,reject) {
+            imglist.forEach(function (item) {
+                var img=new Image();
+                img.src=item;
+                img.onload=function (e) {
+                    console.log('success');
+                    imgCount--;
+                    //document.querySelector(".imglist").appendChild(img);
+                    if(imgCount==0){
+                        resolve();
+                    }
+                };
+                img.onerror=function (e) {
+                    console.log('failed');
+                    imgCount--;
+                    if(imgCount==0){
+                        resolve();
+                    }
+                }
+
+            });
+        });
+    };
+    var timeCount=0;
+    var timer=setInterval(function(){
+        timeCount++;
+        document.querySelector("#timeInfo").innerText=timeCount;
+    },1000);
+    loadGroupImage(imglist)
+        .then(function () {
+            timer=null;
+             alert('前3张图片加载完成');
+             //window.location.href="test.html";
+
+        });
+</script>
+</body>
+</html>
