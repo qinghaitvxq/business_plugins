@@ -4,13 +4,13 @@
 require("./css/style.css");
 var $=jQuery=require('jquery');
 let bsPlugins=require('./src/index');
-
 //init select
 
 
 $("#roomType_sel").auto_sel_cbx({
     "ctlDataGetUrl":"/data/auto_sel_cbx.json"
 });
+$(".imglist").myLazyLoad();
 
 // let ctlconfigdata=[
 //     {
