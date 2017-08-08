@@ -47,7 +47,7 @@
     },1000);
     loadGroupImage(imglist)
         .then(function () {
-            timer=null;
+            clearInterval(timer);
              alert('前3张图片加载完成');
              //window.location.href="test.html";
 

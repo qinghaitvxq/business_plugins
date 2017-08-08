@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片懒加载</title>
+    <style>
+        img{
+            width:200px;
+            height:200px;
+        }
+        .wrapped{
+            position:relative;
+            width:960px;
+            margin:0 auto;
+        }
+        .aside{
+            position: absolute;
+            left:0;
+            top:0;
+            width:150px;
+            border:solid 1px red;
+            background-color: darkgray;
+            height:300px;
+        }
+        .main{
+            border:solid 1px green;
+            margin-left: 160px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapped">
+    <div class="aside"></div>
+    <div class="main">
+        <div class="imglist">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/1.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/2.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/3.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/bj/tp/118/4.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/egvtj4ei0px.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/jjkrbf2mbww.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/44424nwcdoz.jpg" alt="">
+            <img data-src="http://i2.download.fd.pchome.net/t_960x600/g1/M00/08/11/oYYBAFORfLCIOoDEACc6825JK1QAABlOwBWg5wAJzsL745.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/t0r0nyqy350.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/tu/zyf/tt/20160520/zyuyc5easi2.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/allimg/tuku2/1044055000-0.jpg" alt="">
+            <img data-src="http://t1.mmonly.cc/uploads/allimg/tuku2/1044056113-1.jpg" alt="">
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
