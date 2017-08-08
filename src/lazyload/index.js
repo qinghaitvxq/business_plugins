@@ -25,7 +25,6 @@
                          if(!elem.getAttribute("src") || elem.getAttribute("src")===this.settings.defaultImg){
                              console.log('替换');
                              elem.src=elem.getAttribute("data-src");
-
                          }
                          index=i+1;
                      }
@@ -35,8 +34,13 @@
     };
 
     //节流函数
-    function throttle(fun,delay,time) {
-        
+    function throttle(fun) {
+        var _this=this;
+        clearTimeout(fun.tId);
+        fun.tId=setTimeout(function(){
+            console.log("scroll");
+            fun.call(_this);
+        },100);
     };
 
     $.fn.myLazyLoad=function (options) {
@@ -48,7 +52,8 @@
         return this.each(function () {
             var loadImg=new myLazyLoad(this,settings);
             loadImg._lazyload();
-            window.onscroll=loadImg._lazyload.bind(loadImg);
+            window.addEventListener('scroll',throttle.bind(loadImg,loadImg._lazyload));
+
         });
     }
 })(jQuery);
