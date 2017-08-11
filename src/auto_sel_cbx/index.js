@@ -10,14 +10,18 @@ var getMethod=require('../get.js');
 //     console.log(data);
 // });
 (function ($) {
-    function AutoSelCbx(target,options) {
+    function AutoSelCbx(target,settings) {
             this.data=[];
-            this.ctlDataGetUrl=options.ctlDataGetUrl;
+            this.ctlDataGetUrl=settings.ctlDataGetUrl;
             this.target=target;
+            this.settings=settings;
     };
     AutoSelCbx.prototype={
+        init:function(){
+            this._initHtml();
+        },
 
-        _initHtml:function (target) {
+        _initHtml:function () {
             var _this=this;
            getMethod(this.ctlDataGetUrl)
                .then(function (data) {
@@ -26,31 +30,61 @@ var getMethod=require('../get.js');
                        facility=data.facility,
                        rfConfig=data.rfconfig;
                   _this._initSelectOptions(selData);
+                  _this._initFacility(facility);
+                  _this._eventBind(rfConfig);
 
                });
+           return this;
        },
         _initSelectOptions:function (list) {
-            var _this=this;
             var options=[];
-            list.forEach(function (data) {
+            list.forEach( (data)=> {
               var opt=new Option(data.name,data.id);
-                _this.target.appendChild(opt);
+                this.target.appendChild(opt);
             });
 
         },
         _initFacility:function (facility) {
-            // "facility":[
-            //     {"id":"1","fName":"bedWidth","fDes":"床宽","value":[1.5,1.8,2]},
-            //     {"id":"2","fName":"hasWin","fDes":"是否有窗","value":[0,1]},
-            //     {"id":"3","fName":"bedNum","fDes":"床数","value":[1,2,3]}
-            // ],
+
+            if(!Array.isArray(facility) || facility.length==0) return;
+
+            var facilityHtml=$("<div class='checkInfo'></div>");
+            $.each(facility,(i,item)=>{
+                var div_e=$(`<div class="${item.fName}"></div>`);
+                var span_e=$(`<span>${item.fDes}</span>`);
+                var ul_e=$(`<ul></ul>`);
+                var li_e="";
+                $.each(item.value,(j,item)=>{
+                    li_e+=`<li>
+                             <input value="${item}" type="checkbox">${item}</li>`;
+
+                });
+                ul_e.append(li_e);
+                div_e.append(span_e).append(ul_e);
+                facilityHtml.append(div_e);
+            });
+            $(this.target).parent().parent().append(facilityHtml);
+        },
+        _eventBind:function (rgConfig) {
+            // "rfconfig":[
+            //     {"rId":"1","fId":"1","fValue":"1.5"},
+            //     {"rId":"1","fId":"2","fValue":"0"},
+            //     {"rId":"1","fId":"3","fValue":"2"},
+            //
+            //     {"rId":"2","fId":"1","fValue":"2"},
+            //     {"rId":"2","fId":"2","fValue":"1"},
+            //     {"rId":"2","fId":"3","fValue":"1"}
+            //
+            // ]
+          console.log('dd');
+          console.log(this.target.value);
         }
     };
 
     $.fn.auto_sel_cbx=function (options) {
         return this.each(function () {
            let asc=new AutoSelCbx(this,options);
-           asc._initHtml(this);
+            asc.init();
 
         });
     }
